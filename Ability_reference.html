@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="abilityReferenceApp">
+		<head>
+			<title>Champion Ability Reference</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+		<script src="jquery-1.11.3.min.js"></script>
+		
+		<script type="text/javascript" src="js/Ability_reference.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		</head>
+		
+		<body data-ng-controller="referenceCont" >
+			
+
+			<style type="text/css">
+				html{
+					background-color: DarkCyan;
+				}
+
+				
+				#bgColor{
+					background-color: DarkCyan;
+					
+				}
+
+				#searchInput{
+
+					color:orange;
+				}
+				#scrollTable{
+					width: 100%;
+					
+					background-color:black;
+					overflow: scroll;
+					overflow-y:hidden;
+				}
+			</style>
+			<div id="bgColor">
+				<h2>This page is for getting quick and easy images of skills from a varity of games/media</h2>
+				<label>Search: <input ng-model="searchText" id="searchInput"> </label>
+				
+
+				<div id="scrollTable">
+					<table width="100"  >
+						<tbody >
+
+							<tr>
+								<td data-ng-repeat="champs in championList | filter:searchText">
+									<a ng-href="{{champs.link}}"><img ng-src="{{champs.champImg}}"></a><br>{{champs.name}}
+								</td>
+								
+
+
+
+								<!--
+								
+								This is code that was used before the angular implementation was ready
+
+								<td >
+									<a href="#/"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Aatrox.png"></a>
+								</td>
+
+								<td><a href="#partials/Ahri.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Ahri.png"></a></td>
+								<td><a href="#partials/Akali.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Akali.png"></a></td>
+								
+								<td><a href="#partials/Alistar.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Alistar.png"></a></td>
+								
+								<td><a href="#partials/Amumu.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Amumu.png"></a></td>
+								
+
+								
+								<td><a href="#partials/Anivia.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Anivia.png "></a></td>
+
+								<td><a href="#partials/Annie.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Annie.png"></td>
+
+
+								<td><a href="#partials/Ashe.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Ashe.png"></td>
+
+								<td><a href="#partials/Azir.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Azir.png"></td>
+
+								<td><a href="#partials/Bard.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Bard.png"></td>
+
+								<td><a href="#partials/Blitz.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Blitzcrank.png"></td>
+
+								<td><a href="#partials/Brand.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Brand.png"></td>
+
+								<td><a href="#partials/Braum.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Braum.png"></td>
+
+								<td><a href="#partials/Caitlyn.html"><img src="http://ddragon.leagueoflegends.com/cdn/5.18.1/img/champion/Caitlyn.png"></td>
+							</tr>
+							-->
+						
+						</tbody>
+
+					</table>
+
+
+				</div>
+			</div>
+
+			<div>
+				<ng-view></ng-view>
+			</div>
+		</body>
+
+</html>

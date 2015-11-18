@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="championCreatorApp">
+
+<head>
+    <!--swap to post processing of data-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+
+    <title>Champion Creatrix</title>
+
+
+    
+
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body id="page-top" ng-controller="championCreatorController">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Createrix</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+
+                    <li class="">
+                        <a href="http://championcreatrix.com/overwatch/index.html" class="page-scroll">Overwatch</a>
+                    </li>
+
+
+                    <li class="">
+                        <a target="_blank" href="Ability_reference.html">Ability img reference</a>
+                    </li>
+
+
+                    <li class="">
+                        <a target="_blank" href="http://championcreatrix.com/LeagueTutorial.html">Instructions</a>
+                    </li>
+                   
+                   <li class="">
+                        <a target="" href="http://championcreatrix.com/league/DonationPage.html">Support Creator</a>
+                    </li>
+                    
+
+                    <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" id="favoriteButton">Favorites
+                    <span class="caret"></span></button>
+                          
+                    <ul class="dropdown-menu" id="favoriteList">
+                            
+                    </ul>
+                       
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-left">
+                     <li class="active" bootst>
+                        <span id="navInstructions">IMG URL:</span>
+                        <input type="text" id="testInput"/>
+                    </li>
+
+
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="headerFade">
+    </div>
+            <header id="Home" >
+                <div class="header-content aboveFade">
+                    <div class="header-content-inner aboveFade">
+                        <h1>Champion Creatrix: <br>League of Legends</h1>
+                       
+                        <hr>
+                        <p id="championBuilderInfo">Create and share your champion Ideas</p>
+
+                        <a href="#championNaming" class="btn btn-primary btn-xl page-scroll">Get Creating</a>
+                    </div>
+                </div>
+        </header>
+    
+
+
+    <section class="bg-primary" id="startSection">
+         <div class="headerFade">
+        </div>
+        <div class="container">
+
+            <div class="row">
+               
+                <div class="col-md-12 text-center aboveFade">
+                    <h2 class="section-heading" id="championNaming">Champion Name And Lore</h2>
+                    <hr class="">
+                    <p class="text-faded" >Enter image that you want for the champion into the top Image-url textbox<br>
+                        and Click the Place button beneath the window.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                         <div class="col-md-6 col-md-offset-0 text-center aboveFade champion-section wow bounceInUp">
+                                
+                                
+
+                                <div  class="champion-section">
+                                    
+                                    <div><img src="" alt=""  id="bgPointer"></div>
+
+                                    <h2 id="championDisplay">{{creationName}}</h2>
+
+                                    Hero Name<input type="text" id="creationName" data-ng-model="creationName">
+                                    
+                                    <br />
+                                    <br />
+
+                                   
+                                    
+
+
+                                </div>
+                        </div>
+
+                        <div class="col-md-6 col-md-offset-0 aboveFade champion-section wow bounceInUp">
+                            <div id="loreHolder">
+
+                                <br>
+                                
+
+                                <div class="loreBorder" id="section1Lore">
+
+
+                                    <p id="loreTextPara">
+                                        {{ngLore}}
+                                    </p>
+
+                                </div>
+                                
+                                <span>
+                                    LORE!
+                                </span>
+                            
+
+                                <br/>
+                                
+
+                                <textarea name="userCreatedLore" id="userCreatedLore" cols="30" rows="3" data-ng-model="ngLore"></textarea>
+                                
+                            </div>
+                        </div>
+                </div> 
+        </div>   
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4 aboveFade champion-section wow bounceInUp ">
+                     <!--Image Url For Your Creation!<input type="text" id="testInput"/>-->
+                                    
+                        <button id="bgChanger" class="btn btn-default" ng-click="onChampionImageRequest()">Click to place Image of character</button>
+                                    
+
+                        <a href="#passive" class="page-scroll"><button class="btn btn-success">Create Passive</button></a>
+                    </div>
+
+                </div>  
+        </div>
+    </section>
+
+
+    <section id="passiveSection1" class="bg-primary ">
+       
+        
+
+     <div class="headerFade">
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center aboveFade">
+                    <h2 class="section-heading " id="passive">Passive</h2>
+                    <hr class="primary">
+                    <h5>create a passive by typing in its description and pasting a url to the img you want <br> 
+                        at the top left input box, then click passive button to apply the image
+                    </h5>
+
+                    
+                </div>
+
+            </div>
+        </div>
+     
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-5 wow bounceInUp aboveFade">
+
+
+                <button id="passive_button1"  class="btn btn-primary"  ng-click="onPassiveClick()"><img id="passive_img1" src="" alt="" width="150px" height="150px"></button>
+
+                <br>
+                <br>
+                
+
+                <h6>type passive description here</h6>
+
+
+                <textarea type="text" id="passiveInput" class="abilityText" data-ng-model="passive1"></textarea>
+                <div width="200">
+                    <p id="passiveTextArea" class="abilityFontColor">{{passive1}}</p>
+                </div>
+                <a href="#abilities" class="btn btn-success page-scroll">Create Abilities</a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section id="services" class="bg-primary">
+
+        <div class="headerFade">
+        </div>
+        <div class="container">
+            <div class="row aboveFade">
+                <div class="col-lg-12 text-center aboveFade">
+                    <h2 class="section-heading" id="abilities">Abilites</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                            <div class="col-md-12 aboveFade">
+                                <div id="abilityInstructions">
+                                    - Paste image url into the input-box in the navigation bar and click on a button to attach an image to the skill.
+                                    <br>
+                                    - After you pick an image and description of your skill head to the bottom of the page and review your selections to make sure you have everything just right then click the "Lock in" button to generate your creations page.
+                                </div>
+                            </div>
+                        </div>
+        </div>
+        <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 aboveFade  wow bounceInUp ">
+
+                                
+                                <!--this code is for the setting images for the skill buttons-->
+                                
+                                <br/>
+                                <br/>
+
+                                <button id="imgButton1"  class="btn btn-primary" ng-click="onAbility1ButtonClick()"><img id="urlSkillImg_1" src="" alt="" width="150px" height="150px" ></button>
+                                
+                                <br />
+                                <br />
+
+                                Ability 1 Text
+
+                                <br />
+                                <br />
+
+                                <textarea type="text" id="ability1Input" class="abilityText" data-ng-model="ability1"></textarea>
+                                <p id="textTestArea" class="abilityFontColor">{{ability1}}</p>
+
+                        
+                            </div>              
+                                    
+                            <div class="col-md-3 aboveFade  wow bounceInUp ">
+                                
+                                
+                                
+                                <br/>
+                                <br/>
+
+                                <button id="imgButton2"  type="button" class="btn btn-primary" ng-click="onAbility2ButtonClick()"><img id="urlSkillImg_2" src="" alt="" width="150px" height="150px" ></button>
+
+                                <br />
+                                <br />
+
+
+                                Ability 2 Text
+
+                                <br/>
+                                <br/>
+                                <textarea type="text" id="ability2Input" data-ng-model="ability2"  class="abilityText"></textarea>
+                                <p rows="4" cols="50" id="textTestArea2" class="abilityFontColor">{{ability2}}</p>
+                                            
+
+
+                                
+
+
+                            </div>
+
+                            <div class="col-md-3 aboveFade  wow bounceInUp ">
+                                
+
+                                
+                                <br/>
+                                <br/>
+
+                                <button id="imgButton3"  class="btn btn-primary" ng-click="onAbility3ButtonClick()"><img id="urlSkillImg_3" src="" alt="" width="150px" height="150px" ></button>
+                                
+                                <br/>
+                                <br/>
+                                
+                                Ability 3 Text
+
+                                <br/>
+                                <br/>
+
+
+                                <textarea type="text" id="ability3Input" data-ng-model="ability3" class="abilityText"></textarea>
+                                <p id="textTestArea3" class="abilityFontColor">{{ability3}}</p>
+
+
+                            </div>
+
+                            <div class="col-md-3 aboveFade  wow bounceInUp ">
+                                
+        
+
+                                <br/>
+                                <br/>
+
+                                <button  id="imgButton4" type="button" class="btn btn-primary" ng-click="onAbility4ButtonClick()"><img id="urlSkillImg_4" src="" alt="" width="150px" height="150px"></button>
+                
+                                
+                                <br/>
+                                <br/>
+                                
+                                Ability 4 Text
+
+                                <br/>
+                                <br/>
+
+
+                                <textarea type="text" id="ability4Input" data-ng-model="ability4" class="abilityText"></textarea>
+                                <p id="textTestArea4" class="abilityFontColor">{{ability4}}</p>
+
+
+                            </div>
+                    </div>
+        </div>
+
+          <div class="container">
+
+                        <div class="row">
+                                    <div class="col-md-7 col-md-offset-5 aboveFade ">
+                                        <a href="#notesSection" class="page-scroll"><button class="btn btn-success">Next Section</button></a>
+                                    </div>
+                        </div>
+                </div>
+                
+        </div>
+       
+    </section>
+
+
+     <section class="bg-dark">
+                <div class="container text-center">
+                    <div class="call-to-action">
+                        <h2 id="notesSection">Creator Notes</h2>
+                        <h5>This section is for anything else you want the community to know about, from the role the champ should play, to your personal inspiration for creating him. Also if you are using content you did not create please give credit and link to the original creators page.</h5>
+                        <textarea type="text" id="creatorNotes" data-ng-model="creatorNotesModel" class="abilityText"></textarea>
+                                <p id="creatorTextArea" class="abilityFontColor">{{creatorNotesModel}}</p>
+
+                        <a href="#finalSection" class="page-scroll"><button class="btn btn-success">Final Section</button></a>
+                    </div>
+
+                </div>
+    </section>
+
+
+
+    <section id="contact" class="bg-primary">
+        
+        <div class="headerFade">
+        </div>
+
+        <div class="container">
+            
+
+                    <div class="row">
+                        <div class="col-md-12 text-center aboveFade">
+
+                            <h2>Review Choices</h2>
+                            <hr>
+                            <br>
+                            <h3>{{creationName}}</h3>
+                        </div>
+                    </div>
+
+
+
+        </div>
+        <div class="container">
+                    <div class="row" id="finalSection">
+                        
+                        
+                        
+
+                        <div class="col-md-12 col-md-offset-0 aboveFade">
+                            <div><img src="" alt=""  id="bgPointerEnd" height="400" width="600"></div>
+
+                            <div id="loreHolder2">
+
+                                <div class="loreBorder" width="0">
+                                    <h5 id="SkillText">
+                                    
+                                    
+
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>           
+        <div class="container">
+                <div class="row">    
+                        <div class="col-md-4 aboveFade">
+
+                            <h6>passive</h6>
+                            <button  type="button" class="btn btn-primary"  ng-click="finalTextChangeAbility0()"><img id="imgButton0End" src="" alt="" width="150px" height="150px"></button>
+
+
+                        </div>
+
+
+
+                        <div class="col-md-2 aboveFade">
+                            
+
+                            <h6>ability1</h6>
+
+                            <button type="button" class="btn btn-primary" ng-click="finalTextChangeAbility1()"><img id="imgButton1End" src="" alt="" width="150px" height="150px" ></button>
+
+                        </div>
+                        
+                        <div class="col-md-2 aboveFade">
+
+                            <h6>ability2</h6>
+
+                            <button  type="button" class="btn btn-primary"  ng-click="finalTextChangeAbility2()"><img id="imgButton2End" src="" alt="" width="150px" height="150px"></button>
+                            
+                            <br>
+
+                            
+                        </div>
+
+                        <div class="col-md-2 aboveFade">
+
+                            <h6>ability3</h6>
+                            <button  type="button" class="btn btn-primary" ng-click="finalTextChangeAbility3()"><img id="imgButton3End" src="" alt="" width="150px" height="150px" ></button>
+                            <br>
+                            
+                        </div>
+
+                        <div class="col-md-2 aboveFade">
+
+                            <h6>ability4</h6>
+                            <button  type="button" class="btn btn-primary"  ng-click="finalTextChangeAbility4()"><img id="imgButton4End" src="" alt="" width="150px" height="150px"></button>
+
+
+
+                        </div>
+
+
+                    </div>
+        </div>
+
+                    <!--these tags will lockin the choices for the champion creator and will send in the data to the builder page.-->
+        <div class="container">
+
+                    <div class="row">
+
+                            <div class="col-md-8 col-md-offset-4 aboveFade">
+                                
+                                <br>
+                                <br>
+                                <button type="type" id="loreEndButton" class="btn btn-primary" ng-click="finalLoreChange()">
+                                    Lore!
+                                </button>
+
+                                <button class="btn btn-warning" ng-click="aside()">Creator Notes</button>
+                                
+                                <button type="button" class="btn btn-success" id="saveResults" ng-click="confirmSubmit()">CREATE CHAMPION!</button>
+                            </div>
+
+                        </div>
+        </div>
+
+
+                    <!--hidden form saving all the results and images that the user has input-->
+                    <div>
+
+                        <form action="http://championcreatrix.com/league/Champ.php" method="post"  id="completedForm">
+
+
+                            <input type="hidden" name="passive1" id="passive1Data">
+
+                            <input type="hidden" name="ability1" id="ability1Data"> 
+                            <input type="hidden" name="ability2" id="ability2Data">
+                            <input type="hidden" name="ability3" id="ability3Data">
+                            <input type="hidden" name="ability4" id="ability4Data">
+
+                            <input type="hidden" name="passive1img" id="passive1img">
+                            <input type="hidden" name="ability1img" id="ability1img">
+                            <input type="hidden" name="ability2img" id="ability2img">
+                            <input type="hidden" name="ability3img" id="ability3img">
+                            <input type="hidden" name="ability4img" id="ability4img">
+
+                            <input type="hidden" name="championName" id="championName">
+                            <input type="hidden" name="championImg" id="championImg">
+                            <input type="hidden" name="championLore" id="championLore">
+
+                            <input type="hidden" name="championNotes" id="championNotes">
+                            
+                        </form>
+
+                    </div>
+
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+    <!--Angular stuff-->
+    
+    <script type="text/javascript" src="js/angular_holder.js"></script>
+
+
+    <!--script for getting the favorites list detailed in the template page of js-->
+    <script type="text/javascript">
+
+    var items = localStorage.getItem('items')
+
+    if( items === undefined || localStorage.counter == undefined)
+    {
+        localStorage.setItem("counter", 0); 
+
+        
+        localStorage.setItem("favoriteChamps", "0");
+        localStorage.setItem("favoriteChampsURL", "0");
+    }
+    
+
+
+
+    if(localStorage.counter == 0)   {
+        var champNames = new Array();
+        var favoriteChampsURL = new Array();
+
+        
+    }
+    else{
+        //more local storage stuff
+        
+        var champNames = new Array();
+        var favoriteChampsURL = new Array();
+
+        champNames = JSON.parse(localStorage["favoriteChamps"]);
+                
+        favoriteChampsURL = JSON.parse(localStorage["favoriteChampsURL"])
+
+
+        var ul = document.getElementById("favoriteList");
+        for(var i = 1; i < champNames.length; i++)
+        {
+            if(champNames[i] !== null && champNames[i] !== ""){
+                var li = document.createElement("li");
+                
+                li.setAttribute("id","i"+i);
+                
+                li.innerHTML = "<a href="+favoriteChampsURL[i]+">"+champNames[i]+"</a><button style='display:inline;' id='removeFav"+i+"' class='removeButton'>remove</button>";
+            
+                ul.appendChild(li);
+            }
+        }
+
+        
+    }</script>
+</body>
+
+</html>
