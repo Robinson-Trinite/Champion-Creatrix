@@ -43,7 +43,7 @@
 
 	$servername= "localhost";
 	$username = "galeglory007";
-	$password = "Raves007";
+	$password = "";
 	$dbname = "Champion_Creatrix_Data";
 
 	$champCon = new mysqli("$servername", "$username", "$password", "$dbname");
